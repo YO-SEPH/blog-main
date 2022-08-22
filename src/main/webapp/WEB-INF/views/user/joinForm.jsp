@@ -4,7 +4,7 @@
     <!-- / (슬러쉬) 를 붙이면 몿찾는다-->
 
     <div class="container">
-      <form class="row g-3 needs-validation" novalidate>
+      <form class="row g-3 needs-validation" id="submitForm" novalidate >
 
         <div class="col-md-10">
           <label for="username" class="form-label">username:</label>
@@ -25,7 +25,8 @@
         </div>
 
         <div class="col-12">
-            <button id="btn-save" class="btn btn-primary" type="submit">회원가입</button>
+        </br>
+            <button id="submit" type="button" class="btn btn-primary">회원가입</button>
         </div>
 
       </form>
