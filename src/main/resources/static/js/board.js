@@ -12,9 +12,9 @@ let index = {
         $("#btn-reply-save").on("click", ()=>{
                     this.replySave();
         });
-//        $("#btn-reply-delete").on("click", ()=>{
-//                    this.replyDelete();
-//        });
+        $("#delete").on("click", ()=>{
+                    this.delete();
+        });
 
     },
 
@@ -109,10 +109,11 @@ let index = {
             });
         },
 
-        replyDelete: function (boardId, userId) {
+        replyDelete: function (boardId, replyId) {
+
                 $.ajax({
                     type: "DELETE",
-                    url: '/api/board/${boardId}/reply/${replyId}',
+                    url: "/api/board/{boardId}/reply/"+replyId,
                     dataType: "json"
                 }).done(function (resp) {
                     // 결과가 정상이면 done 실행
@@ -124,5 +125,7 @@ let index = {
                     alert(JSON.stringify(error));
                 });
             },
+
+
         }
 index.init();

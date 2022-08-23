@@ -6,22 +6,21 @@
     <div class="container">
       <form class="row g-3 needs-validation" id="submitForm" novalidate >
 
-        <div class="col-md-10">
+        <div class="col-md-7">
           <label for="username" class="form-label">username:</label>
-          <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" value="" required >
-          <div class="invalid-feedback">아이디를 입력해주세요!</div>
+          <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" value="" required>
+          </br>
+          <button type="button" id="idChk" class="btn btn-success">Check</button>
         </div>
 
-        <div class="col-md-10">
+        <div class="col-md-7">
           <label for="email" class="form-label">email address:</label>
           <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="" required>
-          <div class="invalid-feedback">이메일을 입력해주세요!</div>
         </div>
 
-        <div class="col-md-10">
+        <div class="col-md-7">
           <label for="password" class="form-label">password:</label>
           <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" value="" required>
-          <div class="invalid-feedback">비밀번호를 입력해주세요!</div>
         </div>
 
         <div class="col-12">

@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    <form>
+    <form id="submitForm">
         <input type="hidden" id="id" value="${principal.user.id}" />
         <div class="form-group">
             <label for="username">Username</label>
@@ -13,7 +13,7 @@
 
         <div class="form-group ">
             <label for="password">Password</label>
-            <input type="password" class="form-control" placeholder="Enter password" id="password" required>
+            <input type="password" class="form-control" placeholder="Enter password" id="password" value="••••" required>
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Please fill out this field.</div>
         </div>
@@ -22,14 +22,18 @@
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" value="${principal.user.email}" class="form-control" placeholder="Enter email" id="email">
+            <input type="email" value="${principal.user.email}" class="form-control" placeholder="Enter email" id="email" required>
+        </div>
+
+        </br>
+            <button type="button" class="btn btn-secondary" onclick="history.back()" >돌아가기</button>
+            <button type ="button" class="btn btn-primary" id="submit">회원수정하기</button>
         </div>
 
     </form>
-    <button id="btn-update" class="btn btn-primary">회원수정하기</button>
 
 </div>
 
-
-<script src="/js/user.js"></script>
+<script src="/js/update.js"></script>
+</script>
 <%@ include file="../layout/footer.jsp"%>

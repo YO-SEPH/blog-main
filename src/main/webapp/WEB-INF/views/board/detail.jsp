@@ -40,11 +40,11 @@
         <div class="card-header">댓글 리스트</dv>
             <ul id="reply--box" class="list-group">
                 <c:forEach var="reply" items="${board.replys}">
-                    <li id= reply-${replyId} class="list-group-item d-flex justify-content-between">
+                    <li id="replyId" class="list-group-item d-flex justify-content-between">
                         <div>${reply.content}</div>
                         <div class="d-flex">
                             <div class="font-italic">작성자 : ${reply.user.username} &nbsp;</div>
-                            <button onclick=index.replyDelete('${boardId}','${replyId}') class="badge">삭제</button>
+                           <button onclick="index.replyDelete(${board.id},${reply.id})" class="badge">삭제</button>
                         </div>
                     </li>
                 </c:forEach>

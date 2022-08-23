@@ -44,7 +44,7 @@ public class BoardService {
     }
     @Transactional
     public void 글삭제하기(int id) {
-        System.out.println("글삭제하기 : "+ id);
+        System.out.println("board delete : "+ id);
         boardRepository.deleteById(id);
     }
 
@@ -73,6 +73,7 @@ public void 글수정하기(int id, Board requestBoard) {
     
     @Transactional
     public void 댓글삭제(int replyId) {
+        System.out.println("comment delete : " + replyId);
         replyRepository.deleteById(replyId);
     }
 }
