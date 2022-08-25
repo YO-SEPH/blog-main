@@ -39,27 +39,6 @@ var formVailid = {
             alert(err);
         });
     })
-
-
-
-let index = {
-        init: function () {
-            $("#idChk").on("click", ()=>{
-                this.check();
-            });
-        },
-
-    let chk= {
-        username : $("#username").val()
-    };
-
-        check: function() {
-            if(${principal.user.username} == chk.username) {
-                alert("아이디가 중복되었습니다.")
-            } else {
-                alert("가입가능한 아이디 입니다.")
-            }
-        }
-        }
+    
 index.init();
 
