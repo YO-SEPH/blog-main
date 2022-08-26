@@ -1,8 +1,8 @@
 package com.cos.blog.service;
 
 
+import java.util.Optional;
 
-import com.cos.blog.dto.ResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,6 +30,7 @@ public class UserService {
         user.setRole(RoleType.USER);
         userRepository.save(user);
      }
+
      @Transactional
     public void 회원수정(User user) {
          User persistance = userRepository.findById(user.getId())
@@ -41,7 +42,14 @@ public class UserService {
          persistance.setPassword(encPassword);
          persistance.setEmail(user.getEmail());
      }
-
+     
+     @Transactional(readOnly = true)
+     public Optional<User> idCheck(String username) {
+        Optional<User> cnt = userRepository.findByUsername(username);
+        System.out.println("cnt : " + cnt);
+        return cnt;
+     }
+     
 }
 
 

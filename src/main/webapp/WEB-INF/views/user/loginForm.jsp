@@ -5,17 +5,17 @@
     <!-- / (슬러쉬) 를 붙이면 몿찾는다-->
 
     <div class="container" >
-      <form action="/auth/loginProc" method="post" class="was-validated">
+      <form action="/auth/loginProc" method="post">
         <div class="form-group">
-          <label for="username">username:</label>
+          <label for="username">username</label>
           <input type="text" class="form-control" id="username" name="username" required>
-          <div class="invalid-feedback">아이디를 입력해주세요 :)</div>
+
         </div>
 
         <div class="form-group">
-          <label for="password">password:</label>
+          <label for="password">password</label>
           <input type="password" class="form-control" id="password" name="password" required>
-          <div class="invalid-feedback">비밀번호를 입력해주세요 :)</div>
+
         </div>
 
         <button id="btn-login" class="btn btn-primary btn-block">로그인</button>

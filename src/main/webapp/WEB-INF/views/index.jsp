@@ -45,3 +45,9 @@
 
     <!-- justify-content-center : 뷰티파이에서 가운데 정렬해주는 코멘트   disabled -->
     <%@ include file="layout/footer.jsp" %>
+    <style>
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+    </style>

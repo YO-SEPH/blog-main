@@ -3,7 +3,7 @@ var formVailid = {
 
     rules : {
     username : {
-        required : true
+        required : true,
     },
     password : {
         required : true
@@ -11,6 +11,18 @@ var formVailid = {
     email : {
         required : true
     }
+    },
+     messages: {
+         username: {
+             required: "아이디를 입력해주세요",
+        },
+        email: {
+            required: "이메일을 입력해주세요.",
+            email: "이메일 형식을 확인하세요."
+        },
+        password: {
+            required: "비밀번호를 입력해주세요"
+        }
     }
 }
 
@@ -39,6 +51,4 @@ var formVailid = {
             alert(err);
         });
     })
-    
-index.init();
-
+ 
