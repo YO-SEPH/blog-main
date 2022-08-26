@@ -39,6 +39,3 @@ var formVailid = {
             alert(err);
         });
     })
-    
-index.init();
-
