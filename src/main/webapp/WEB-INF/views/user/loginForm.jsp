@@ -25,6 +25,7 @@
 
     <%@ include file="../layout/footer.jsp" %>
 
+
 <style>
   .container {
     width: 500px;
