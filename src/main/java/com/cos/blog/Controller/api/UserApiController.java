@@ -1,7 +1,5 @@
 package com.cos.blog.Controller.api;
 
-import java.util.Optional;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +9,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
 import com.cos.blog.dto.ResponseDto;
 import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
@@ -46,14 +45,15 @@ public class UserApiController {
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 
-    @PostMapping("/idCheck")
-    @ResponseBody
-    public Optional<User> findByUsername(@RequestParam("username") String username) {
+    //@PostMapping("/idCheck")
+    //@ResponseBody
+    //public Optional<User> findByUsername(@RequestBody String username) {
 
-        Optional<User> cnt = userService.idCheck(username);
-        return cnt;
+    //    Optional<User> cnt = userService.idCheck(username);
+    //    return cnt;
 
-    }
+    //}
+    
 }
 
 /*

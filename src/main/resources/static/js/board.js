@@ -100,7 +100,7 @@ let index = {
                 dataType: "json"
             }).done(function (resp) {
                 // 결과가 정상이면 done 실행
-                alert("댓글작성이 완료되었습니다.");
+                //alert("댓글작성이 완료되었습니다.");
                 location.href = `/board/${boardId}`;
             }).fail(function (error) {
                 // 실패하면 fail 실행
@@ -117,7 +117,7 @@ let index = {
                     dataType: "json"
                 }).done(function (resp) {
                     // 결과가 정상이면 done 실행
-                    alert("삭제하였습니다");
+                    //alert("삭제하였습니다");
                     location.href = `/board/${boardId}`;
                 }).fail(function (error) {
                     // 실패하면 fail 실행

@@ -1,7 +1,7 @@
 package com.cos.blog.service;
 
 
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
 import com.cos.blog.repository.UserRepository;
+
+
 import org.springframework.transaction.annotation.Transactional;
 
 //스프링이 컴포넌트 스캔을 통해서 Bean에 등록을 해준다. IoC를 해준다.
@@ -43,13 +45,12 @@ public class UserService {
          persistance.setEmail(user.getEmail());
      }
      
-     @Transactional(readOnly = true)
-     public Optional<User> idCheck(String username) {
-        Optional<User> cnt = userRepository.findByUsername(username);
-        System.out.println("cnt : " + cnt);
-        return cnt;
-     }
-     
+    // @Transactional(readOnly = true)
+    // public Optional<User> idCheck(String username) {
+    //    Optional<User> cnt = userRepository.findByUsername(username);
+    //    System.out.println("cnt : " + cnt);
+    //    return cnt;
+    // }
 }
 
 

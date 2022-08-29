@@ -31,7 +31,31 @@
                 <textarea id="reply-content" class="form-control" row = "1"></textarea>
             </div>
             <div class="card-footer">
-                <button type="button" id="btn-reply-save" class="btn btn-primary">등록</button>
+
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal2">등록</button>
+
+                           <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">댓글 등록</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        댓글을 등록 하시겠습니까?
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary" id="btn-reply-save" class="badge">확인</button>     
+                    </div>
+                    </div>
+                </div>
+            </div>                       
+
+
             </div>
         </form>
     </div>
@@ -44,8 +68,29 @@
                         <div>${reply.content}</div>
                         <div class="d-flex">
                             <div class="font-italic">작성자 : ${reply.user.username} &nbsp;</div>
-                           <button onclick="index.replyDelete(${board.id},${reply.id})" class="badge">삭제</button>
-                        </div>
+                           <!-- Button trigger modal -->
+                           <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">삭제</button>
+
+                           <!-- Modal -->
+                           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                             <div class="modal-dialog">
+                               <div class="modal-content">
+                                 <div class="modal-header">
+                                   <h5 class="modal-title" id="exampleModalLabel">댓글 삭제</h5>
+                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                   </button>
+                                 </div>
+                                 <div class="modal-body">
+                                   댓글을 삭제 하시겠습니까?
+                                 </div>
+                                 <div class="modal-footer">
+                                   <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+                                   <button type="button" class="btn btn-primary" onclick="index.replyDelete(${board.id},${reply.id})" class="badge">확인</button>     
+                               </div>
+                             </div>
+                           </div>
+                        </div>                       
                     </li>
                 </c:forEach>
             </ul>

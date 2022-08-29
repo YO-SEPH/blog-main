@@ -51,7 +51,3 @@ var formVailid = {
             alert(err);
         });
     })
-<<<<<<< HEAD
- 
-=======
->>>>>>> 6c88d48c9ab20dc79eadd704cfd983e0c58fdfba
