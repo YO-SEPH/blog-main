@@ -21,14 +21,14 @@ public class BoardController {
     
     //@AuthenticationPrincipal PrincipalDetail principal
     @GetMapping({"" , "/"})
-    public String index(Model model, @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC)Pageable pageable) {
+    public String index(Model model, @PageableDefault(size = 9, sort = "id", direction = Sort.Direction.DESC)Pageable pageable) {
         model.addAttribute("boards", boardService.글목록(pageable));
 
         // System.out.println("로그인 사용자 아이디 :" + principal.getUsername());
         return "index";
     }
 
-    @GetMapping("board/{id}")
+    @GetMapping("/board/{id}")
     public String findByid(@PathVariable int id, Model model) {
         model.addAttribute("board",boardService.글상세보기(id));
         return "board/detail";

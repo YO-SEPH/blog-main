@@ -35,24 +35,24 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <c:choose>
-                <c:when test= "${empty principal}" >
+                <c:when test= "${empty principal}">
                     <ul class="navbar-nav">
                         <li class="nav-item">
 
 
-                        <a class="nav-link" href="/auth/loginForm">로그인</a>
+                        <a class="nav-link" href="/auth/loginForm" style= "color: #062524;">로그인</a>
 
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="/auth/joinForm">회원가입</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/auth/joinForm" style= "color: #062524;">회원가입</a></li>
                     </ul>
                 </c:when>
 
                 <c:otherwise>
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="/board/saveForm">글 작성</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/user/updateForm">회원정보</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/board/saveForm" style= "color: #062524;">글 작성</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/user/updateForm" style= "color: #062524;">회원정보</a></li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout" id ="logout" onclick="alert('로그아웃 되었습니다')">로그아웃</a>
+                            <a class="nav-link" href="/logout" id ="logout" onclick="alert('로그아웃 되었습니다')" style= "color: #062524;">로그아웃</a>
                         </li>
                     </ul>
                 </c:otherwise>

@@ -10,10 +10,8 @@
                     <label for="username" class="form-label">username</label>
                     <input type="text" class="form-control" id="username" name="username" value="" required>
                     <button type="button" onclick="checkId()" class="btn btn-danger">중복체크</button>
-                    <!--<d id="idAvailable" class="valid-feedback" style="display: none;"></d>
-                    <d id="idNotAvailable" class="invalid-feedback" style="display: none;"></d>-->
-                    <span class="id_ok">사용 가능한 아이디입니다.</span>
-                    <span class="id_already">누군가 이 아이디를 사용하고 있어요.</span>
+                    <d id="idAvailable" class="valid-feedback" style="display: none;"></d>
+                    <d id="idNotAvailable" class="invalid-feedback" style="display: none;"></d>
                     <p id="demo"></p>
                 </div>
 
@@ -30,14 +28,12 @@
 
                 </div>
 
-
                 <div class="col-12">
                     </br>
                     <button id="submit" type="button" class="btn btn-primary btn-block">회원가입</button>
                     <button type="button" class="btn btn-danger btn-block" onclick="history.back()">돌아가기</button>
                 </div>
-
-            </form>
+           </form>
 
         </div>
         <script src="/js/user.js"></script>
@@ -66,24 +62,24 @@
             //    });
             //}
             /**실패작*/
-            //function checkId() {
-            //    $.ajax({
-            //        url: '/id/check',
-            //        type: 'GET',
-            //        contentType: 'application/json',
-            //        data: {
-            //            username: $("#username").val()
-            //        },
-            //        success: function(result) {
-            //            $('#idNotAvailable').hide();
-            //            $('#idAvailable').show().text("사용가능한 아이디 입니다.").append($('<br />'));
-            //        },
-            //        error: function(error) {
-            //            $('#idAvailable').hide();
-            //            $('#idNotAvailable').show().text('이미 사용중인 아이디 입니다.').append($('<br />'));
-            //        }
-            //    })
-            //}
+            function checkId() {
+                $.ajax({
+                    url: '/id/check',
+                    type: 'GET',
+                    contentType: 'application/json',
+                    data: {
+                        username: $("#username").val()
+                    },
+                    success: function(result) {
+                        $('#idNotAvailable').hide();
+                        $('#idAvailable').show().text("사용가능한 아이디 입니다.").append($('<br />'));
+                    },
+                    error: function(error) {
+                        $('#idAvailable').hide();
+                        $('#idNotAvailable').show().text('이미 사용중인 아이디 입니다.').append($('<br />'));
+                    }
+                })
+            }
         </script>
 
 

@@ -42,6 +42,12 @@ public class BoardService {
                 return new IllegalArgumentException("글 상세보기 실패 : 아이디를 찾을 수 없습니다.");
              });
     }
+
+    //@Transactional
+    //public int updateCount(int id) {
+    //    return boardRepository.updateCount(id);
+    //}
+
     @Transactional
     public void 글삭제하기(int id) {
         System.out.println("board delete : "+ id);

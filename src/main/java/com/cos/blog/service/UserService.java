@@ -1,10 +1,6 @@
 package com.cos.blog.service;
 
 
-
-
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -48,10 +44,10 @@ public class UserService {
         persistance.setEmail(user.getEmail());
     }
     /** 실패 작 */
-//    @Transactional
-//    public boolean checkUsernameDuplicate(String username) {
-//        return userRepository.existsByUsername(username);
-//    }
+    @Transactional
+    public boolean checkUsernameDuplicate(String username) {
+        return userRepository.existsByUsername(username);
+    }
     //@Transactional
     //public Optional<User> idCheck(int id) {
     //    Optional<User> principal = userRepository.findById(id);

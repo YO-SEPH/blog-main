@@ -1,14 +1,13 @@
 package com.cos.blog.Controller.api;
 
 import javax.servlet.http.HttpSession;
-import javax.websocket.server.PathParam;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.config.authentication.UserServiceBeanDefinitionParser;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -48,10 +47,10 @@ public class UserApiController {
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
     /** 실패 작 */
-//    @GetMapping("/id/idcheck")
-//    public ResponseEntity<Boolean> checkUsernameDuplicate(@PathVariable String username) {
-//        return ResponseEntity.ok(userService.checkUsernameDuplicate(username));
-//    }
+    @GetMapping("/id/idcheck")
+    public ResponseEntity<Boolean> checkUsernameDuplicate(@PathVariable String username) {
+        return ResponseEntity.ok(userService.checkUsernameDuplicate(username));
+    }
     //@PostMapping("idCheck")
     //@ResponseBody
     //public int idCheck(@RequestParam("username") String useranme) {

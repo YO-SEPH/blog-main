@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 import com.cos.blog.config.auth.PrincipalDetailService;
 
@@ -22,26 +23,25 @@ import com.cos.blog.config.auth.PrincipalDetailService;
 @EnableWebSecurity // Security 필터가 등록됨 = 스프링 시큐리티가 이미 활성화는 되어있지만, 설정은 해당 파일에서 할 것임
 @EnableGlobalMethodSecurity(prePostEnabled = true) // 특정 주소로 접근을 하면 권한 및 인증을 미리 체크 (수행한 후에 체크하는 것이 아님)
 public class SecurityConfig {
+
     @Autowired
     private PrincipalDetailService principalDetailService;
-
+    
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
-
-
-
-
+    
+    
     @Bean // Ioc가 된다
     public BCryptPasswordEncoder encodePWD() {
         return new BCryptPasswordEncoder();
     }
-
+    
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
     }
-
+    
     // 필터링
     //시큐리티가 로그인할 때 어떤 암호화로 인코딩해서 비번을 비교할지 알려줘야 함.
     // 시큐리티가 대신 로그인 함 -> password 가로챔
